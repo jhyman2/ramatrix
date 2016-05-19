@@ -1,0 +1,32 @@
+body {
+  background-color: yellow;
+
+  h1 {
+    text-align: center;
+  }
+
+  #wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+
+    table {
+      padding: 20px;
+      border: 1px solid black;
+      box-shadow: 10px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+      tbody {
+        tr {
+          td:not(:first-child) {
+            text-align: center;
+            border: 1px solid black;
+          }
+
+          td:first-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+  }
+}
