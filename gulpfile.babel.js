@@ -27,11 +27,7 @@ gulp.task('default', cb => {
   run('build-dev', cb);
 });
 
-gulp.task('build-dev', cb => {
-  run('build', 'watch-webpack', 'watch-sass', cb);
-});
-
-gulp.task('build-sven', shell.task(['webpack-dev-server & gulp watch-sass']));
+gulp.task('build-dev', shell.task(['gulp sass & webpack-dev-server --colors & gulp watch-sass']));
 
 gulp.task('clean-client', cb => {
   rimraf(paths.clientDest, cb);

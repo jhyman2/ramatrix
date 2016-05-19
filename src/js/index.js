@@ -8,7 +8,7 @@ class RAM extends React.Component {
   }
 
   handleClick () {
-    console.log(this);
+    // @todo
   }
 
   render () {
