@@ -1,3 +1,5 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: {
     app: './src/js/index.js'
@@ -26,6 +28,13 @@ module.exports = {
     path: __dirname + '/app',
     filename: 'bundle.js'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Ramatrix',
+      template: 'src/index.html',
+      filename: 'index.html'
+    })
+  ],
   devServer: {
     contentBase: './app'
   }
