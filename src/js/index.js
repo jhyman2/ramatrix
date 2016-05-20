@@ -5,29 +5,37 @@ class RAM extends React.Component {
 
   constructor () {
     super();
+
+    this.state = {
+      times: new Map()
+    }
   }
 
   handleClick (time, day) {
-    // @todo
-    console.log(time, day);
+    let key = `${time}${day}`;
+
+    this.setState({
+      times: this.state.times.set(key, !this.state.times.get(key))
+    });
   }
 
   render () {
     const tableRows = [];
 
-    for (let i = 0; i < 24; i++) {
-      let x = i % 12;
+    for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
+      let amPm = militaryHour < 12 ? 'AM' : 'PM';
+      let hour = militaryHour % 12;
 
       tableRows.push(
-        <tr>
-          <td>{x ? x : 12}-{x+1}</td>
-          <td onClick={this.handleClick.bind(this, x, 'Su')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'M')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'T')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'W')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'Th')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'F')}></td>
-          <td onClick={this.handleClick.bind(this, x, 'Sa')}></td>
+        <tr key={`row${militaryHour}`}>
+          <td key={`time${militaryHour}`}>{hour ? hour : 12}-{hour+1}{amPm}</td>
+          <td key={`slot${militaryHour}Su`} className={this.state.times.get(`${hour}${amPm}Su`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Su')}></td>
+          <td key={`slot${militaryHour}M`} className={this.state.times.get(`${hour}${amPm}M`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'M')}></td>
+          <td key={`slot${militaryHour}T`} className={this.state.times.get(`${hour}${amPm}T`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'T')}></td>
+          <td key={`slot${militaryHour}W`} className={this.state.times.get(`${hour}${amPm}W`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'W')}></td>
+          <td key={`slot${militaryHour}Th`} className={this.state.times.get(`${hour}${amPm}Th`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Th')}></td>
+          <td key={`slot${militaryHour}F`} className={this.state.times.get(`${hour}${amPm}F`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'F')}></td>
+          <td key={`slot${militaryHour}Sa`} className={this.state.times.get(`${hour}${amPm}Sa`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Sa')}></td>
         </tr>
       )
     }

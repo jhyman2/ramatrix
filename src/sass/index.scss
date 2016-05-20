@@ -25,6 +25,10 @@ body {
           td:first-child {
             text-align: end;
           }
+
+          .filled {
+            background-color: red;
+          }
         }
       }
     }
