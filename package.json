@@ -1,18 +1,16 @@
 {
   "name": "ramatrix",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "React availability matrix",
   "main": "src/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jamison.hyman@gmail.com",
   "babel": {
     "presets": [
       "es2015"
     ]
   },
-  "license": "ISC",
   "dependencies": {
     "react": "^15.0.2",
     "react-dom": "^15.0.2"
@@ -33,5 +31,12 @@
     "rimraf": "^2.5.2",
     "run-sequence": "^1.2.0",
     "webpack": "^1.13.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jhyman2/ramatrix.git"
+  },
+  "author": "GriddleGriddle",
+  "license": "MIT",
+  "homepage": "https://github.com/jhyman2/ramatrix"
 }

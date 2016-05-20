@@ -31,3 +31,5 @@ Run `npm install` and `gulp build`. This will output the built JS and CSS into t
 
 <h2>Authors</h2>
 * [jhyman2](https://github.com/jhyman2)
+
+<h3>[github](https://github.com/jhyman2/ramatrix)</h3>
