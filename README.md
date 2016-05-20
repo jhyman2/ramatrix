@@ -32,4 +32,6 @@ Run `npm install` and `gulp build`. This will output the built JS and CSS into t
 <h2>Authors</h2>
 * [jhyman2](https://github.com/jhyman2)
 
-[github](https://github.com/jhyman2/ramatrix)
+<h2>Links</h2>
+* [git repo](https://github.com/jhyman2/ramatrix)
+* [npm](https://www.npmjs.com/package/ramatrix)
