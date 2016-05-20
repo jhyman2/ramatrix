@@ -21,21 +21,23 @@ class RAM extends React.Component {
 
   render () {
     const tableRows = [];
+    const timeMap   = this.state.times;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
       let amPm = militaryHour < 12 ? 'AM' : 'PM';
       let hour = militaryHour % 12;
+      let time = `${hour}${amPm}`;
 
       tableRows.push(
         <tr key={`row${militaryHour}`}>
           <td key={`time${militaryHour}`}>{hour ? hour : 12}-{hour+1}{amPm}</td>
-          <td key={`slot${militaryHour}Su`} className={this.state.times.get(`${hour}${amPm}Su`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Su')}></td>
-          <td key={`slot${militaryHour}M`} className={this.state.times.get(`${hour}${amPm}M`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'M')}></td>
-          <td key={`slot${militaryHour}T`} className={this.state.times.get(`${hour}${amPm}T`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'T')}></td>
-          <td key={`slot${militaryHour}W`} className={this.state.times.get(`${hour}${amPm}W`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'W')}></td>
-          <td key={`slot${militaryHour}Th`} className={this.state.times.get(`${hour}${amPm}Th`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Th')}></td>
-          <td key={`slot${militaryHour}F`} className={this.state.times.get(`${hour}${amPm}F`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'F')}></td>
-          <td key={`slot${militaryHour}Sa`} className={this.state.times.get(`${hour}${amPm}Sa`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${hour}${amPm}`, 'Sa')}></td>
+          <td key={`slot${militaryHour}Su`} className={timeMap.get(`${time}Su`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Su')}></td>
+          <td key={`slot${militaryHour}M`} className={timeMap.get(`${time}M`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'M')}></td>
+          <td key={`slot${militaryHour}T`} className={timeMap.get(`${time}T`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'T')}></td>
+          <td key={`slot${militaryHour}W`} className={timeMap.get(`${time}W`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'W')}></td>
+          <td key={`slot${militaryHour}Th`} className={timeMap.get(`${time}Th`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Th')}></td>
+          <td key={`slot${militaryHour}F`} className={timeMap.get(`${time}F`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'F')}></td>
+          <td key={`slot${militaryHour}Sa`} className={timeMap.get(`${time}Sa`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Sa')}></td>
         </tr>
       )
     }
