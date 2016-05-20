@@ -7,11 +7,31 @@ class RAM extends React.Component {
     super();
   }
 
-  handleClick () {
+  handleClick (time, day) {
     // @todo
+    console.log(time, day);
   }
 
   render () {
+    const tableRows = [];
+
+    for (let i = 0; i < 24; i++) {
+      let x = i % 12;
+
+      tableRows.push(
+        <tr>
+          <td>{i ? i : 12}-{i+1}</td>
+          <td onClick={this.handleClick.bind(this, x, 'Su')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'M')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'T')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'W')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'Th')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'F')}></td>
+          <td onClick={this.handleClick.bind(this, x, 'Sa')}></td>
+        </tr>
+      )
+    }
+
     return (
       <div id="wrapper">
         <table>
@@ -28,236 +48,7 @@ class RAM extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>12-1</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>1-2</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>2-3</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>3-4</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>4-5</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>5-6</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>6-7</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>7-8</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>8-9</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>10-11</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>11-12</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>12-1</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>1-2</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>2-3</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>3-4</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>4-5</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>5-6</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>6-7</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>7-8</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>8-9</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>9-10</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>10-11</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
-            <tr>
-              <td>11-12</td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-              <td onClick={this.handleClick.bind(this)}></td>
-            </tr>
+            {tableRows}
           </tbody>
         </table>
       </div>
