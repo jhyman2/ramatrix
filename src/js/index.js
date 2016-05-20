@@ -20,7 +20,7 @@ class RAM extends React.Component {
 
       tableRows.push(
         <tr>
-          <td>{i ? i : 12}-{i+1}</td>
+          <td>{x ? x : 12}-{x+1}</td>
           <td onClick={this.handleClick.bind(this, x, 'Su')}></td>
           <td onClick={this.handleClick.bind(this, x, 'M')}></td>
           <td onClick={this.handleClick.bind(this, x, 'T')}></td>
