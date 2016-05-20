@@ -1,6 +1,4 @@
 body {
-  background-color: yellow;
-
   h1 {
     text-align: center;
   }
@@ -13,7 +11,9 @@ body {
     table {
       padding: 20px;
       border: 1px solid black;
+      border-radius: 20px;
       box-shadow: 10px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      background: lavender;
 
       tbody {
         tr {
@@ -26,8 +26,12 @@ body {
             text-align: end;
           }
 
+          td {
+            width: 65px;
+          }
+
           .filled {
-            background-color: red;
+            background-color: #00bcd4;
           }
         }
       }
