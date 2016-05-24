@@ -19,7 +19,7 @@ localhost:8080
 
 <h3>Compiling for production</h3>
 
-Run `npm install` and `gulp build`. This will output the built JS and CSS into the `app` directory.
+Run `npm install` and `gulp build`. This will output the built JS into the `dist` directory.
 
 <h2>Technologies/Libraries</h2>
 
@@ -27,6 +27,7 @@ Run `npm install` and `gulp build`. This will output the built JS and CSS into t
 * Gulp
 * Node
 * React
+* SASS
 * Webpack
 
 <h2>Authors</h2>

@@ -1,5 +1,7 @@
-import React      from 'react';
-import ReactDOM   from 'react-dom';
+import ReactDOM from 'react-dom';
+import React    from 'react';
+
+require('!style!css!sass!./../sass/index.scss');
 
 class RAM extends React.Component {
 
@@ -17,11 +19,14 @@ class RAM extends React.Component {
     this.setState({
       times: this.state.times.set(key, !this.state.times.get(key))
     });
+
+    this.props.getDataFn(key);
   }
 
   render () {
     const tableRows = [];
     const timeMap   = this.state.times;
+    const getDataFn = this.props.getDataFn;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
       let amPm = militaryHour < 12 ? 'AM' : 'PM';
@@ -66,4 +71,8 @@ class RAM extends React.Component {
   }
 }
 
-ReactDOM.render(<RAM />, document.getElementById('app-container'));
+const getDataFn = (data) => {
+  console.log(data);
+};
+
+ReactDOM.render(<RAM getDataFn={getDataFn.bind(this)} />, document.getElementById('RAM-container'));
