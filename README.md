@@ -1,5 +1,13 @@
 # Ramatrix (React Availability Matrix)
 
+> A react component to gather a user's hourly availability.
+
+## Install
+```
+npm install ramatrix --save
+```
+
+# Development
 <h3>Dependencies</h3>
 You will need to have Node (6), Gulp, webpack, and webpack-dev-server installed on your system globally. After installing node, run
 the following:

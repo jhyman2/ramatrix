@@ -2,9 +2,17 @@
   "name": "ramatrix",
   "version": "0.0.12",
   "description": "React availability matrix",
+  "keywords": [
+    "react-component",
+    "react",
+    "availability",
+    "matrix"
+    "react-availability"
+  ],
   "main": "dist/bundle.js",
   "scripts": {
     "build": "gulp build",
+    "prepublish": "gulp build",
     "start": "webpack-dev-server --colors"
   },
   "babel": {
@@ -38,6 +46,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/jhyman2/ramatrix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhyman2/ramatrix/issues"
   },
   "author": "Jamison Hyman",
   "license": "MIT",
