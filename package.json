@@ -6,7 +6,7 @@
     "react-component",
     "react",
     "availability",
-    "matrix"
+    "matrix",
     "react-availability"
   ],
   "main": "dist/bundle.js",
