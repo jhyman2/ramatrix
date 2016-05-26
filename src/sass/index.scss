@@ -1,34 +1,32 @@
 #RAM-container {
-  #wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 
-    table {
-      padding: 20px;
-      border: 1px solid black;
-      border-radius: 20px;
-      box-shadow: 10px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-      background: lavender;
+  table {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: lavender;
 
-      tbody {
-        tr {
-          td:not(:first-child) {
-            text-align: center;
-            border: 1px solid black;
-          }
+    tbody {
+      tr {
+        td:not(:first-child) {
+          text-align: center;
+          border: 1px solid black;
+        }
 
-          td:first-child {
-            text-align: end;
-          }
+        td:first-child {
+          text-align: end;
+        }
 
-          td {
-            width: 65px;
-          }
+        td {
+          width: 65px;
+        }
 
-          .filled {
-            background-color: #00bcd4;
-          }
+        .filled {
+          background-color: #00bcd4;
         }
       }
     }

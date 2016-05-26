@@ -9,23 +9,24 @@ class RAM extends React.Component {
     super();
 
     this.state = {
-      times: new Map()
+      times: {}
     }
   }
 
   handleClick (time, day) {
-    let key = `${time}${day}`;
+    let key    = `${time}${day}`;
+    let newVal = {};
+
+    newVal[`${key}`] = !this.state.times[key];
 
     this.setState({
-      times: this.state.times.set(key, !this.state.times.get(key))
+      times: Object.assign(this.state.times, newVal)
     });
-
-    this.props.getDataFn(key);
   }
 
   render () {
     const tableRows = [];
-    const timeMap   = this.state.times;
+    const times     = this.state.times;
     const getDataFn = this.props.getDataFn;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
@@ -36,19 +37,19 @@ class RAM extends React.Component {
       tableRows.push(
         <tr key={`row${militaryHour}`}>
           <td key={`time${militaryHour}`}>{hour ? hour : 12}-{hour+1}{amPm}</td>
-          <td key={`slot${militaryHour}Su`} className={timeMap.get(`${time}Su`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Su')}></td>
-          <td key={`slot${militaryHour}M`} className={timeMap.get(`${time}M`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'M')}></td>
-          <td key={`slot${militaryHour}T`} className={timeMap.get(`${time}T`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'T')}></td>
-          <td key={`slot${militaryHour}W`} className={timeMap.get(`${time}W`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'W')}></td>
-          <td key={`slot${militaryHour}Th`} className={timeMap.get(`${time}Th`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Th')}></td>
-          <td key={`slot${militaryHour}F`} className={timeMap.get(`${time}F`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'F')}></td>
-          <td key={`slot${militaryHour}Sa`} className={timeMap.get(`${time}Sa`) ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Sa')}></td>
+          <td key={`slot${militaryHour}Su`} className={times[`${time}Su`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Su')}></td>
+          <td key={`slot${militaryHour}M`} className={times[`${time}M`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'M')}></td>
+          <td key={`slot${militaryHour}T`} className={times[`${time}T`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'T')}></td>
+          <td key={`slot${militaryHour}W`} className={times[`${time}W`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'W')}></td>
+          <td key={`slot${militaryHour}Th`} className={times[`${time}Th`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Th')}></td>
+          <td key={`slot${militaryHour}F`} className={times[`${time}F`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'F')}></td>
+          <td key={`slot${militaryHour}Sa`} className={times[`${time}Sa`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Sa')}></td>
         </tr>
       )
     }
 
     return (
-      <div id="wrapper">
+      <div id="RAM-container" data={JSON.stringify(this.state.times)}>
         <table>
           <thead>
             <tr>
@@ -71,8 +72,17 @@ class RAM extends React.Component {
   }
 }
 
-const getDataFn = (data) => {
-  console.log(data);
-};
+class Test extends React.Component {
 
-ReactDOM.render(<RAM getDataFn={getDataFn.bind(this)} />, document.getElementById('RAM-container'));
+  componentDidMount () {
+    window.RAM_component = ReactDOM.findDOMNode(this.refs['RAM_reference']);
+  }
+
+  render () {
+    return (
+      <RAM ref="RAM_reference" />
+    )
+  }
+}
+
+ReactDOM.render(<Test />, document.getElementById('app-container'));
