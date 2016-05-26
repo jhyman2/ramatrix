@@ -75,6 +75,8 @@ class RAM extends React.Component {
 class Test extends React.Component {
 
   componentDidMount () {
+    // TO GET THE CURRENT STATE OF THE RAM-container
+    // window.RAM_component.getAttribute('data');
     window.RAM_component = ReactDOM.findDOMNode(this.refs['RAM_reference']);
   }
 
