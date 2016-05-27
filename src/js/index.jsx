@@ -3,7 +3,7 @@ import React    from 'react';
 
 require('!style!css!sass!./../sass/index.scss');
 
-class RAM extends React.Component {
+export default class RAM extends React.Component {
 
   constructor () {
     super();
@@ -71,20 +71,3 @@ class RAM extends React.Component {
     );
   }
 }
-
-class Test extends React.Component {
-
-  componentDidMount () {
-    // TO GET THE CURRENT STATE OF THE RAM-container
-    // window.RAM_component.getAttribute('data');
-    window.RAM_component = ReactDOM.findDOMNode(this.refs['RAM_reference']);
-  }
-
-  render () {
-    return (
-      <RAM ref="RAM_reference" />
-    )
-  }
-}
-
-ReactDOM.render(<Test />, document.getElementById('app-container'));
