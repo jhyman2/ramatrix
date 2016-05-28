@@ -1,5 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var path              = require('path');
 module.exports = {
   entry: {
     app: './src/js/index.jsx'
@@ -23,12 +23,14 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.html']
+    extensions: ['', '.js', '.jsx', '.html'],
+    fallback: path.join(__dirname, 'node_modules')
   },
   resolveLoader: {
     modulesDirectories: [
       './node_modules'
-    ]
+    ],
+    fallback: path.join(__dirname, 'node_modules')
   },
   output: {
     path: __dirname + '/dist',
