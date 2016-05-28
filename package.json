@@ -1,6 +1,6 @@
 {
   "name": "ramatrix",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "React availability matrix",
   "keywords": [
     "react-component",
@@ -9,7 +9,7 @@
     "matrix",
     "react-availability"
   ],
-  "main": "dist/bundle.js",
+  "main": "src/js/index.jsx",
   "scripts": {
     "build": "gulp build",
     "prepublish": "gulp build",

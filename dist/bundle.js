@@ -46,6 +46,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _reactDom = __webpack_require__(1);
@@ -75,7 +79,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RAM).call(this));
 
 	    _this.state = {
-	      times: new Map()
+	      times: {}
 	    };
 	    return _this;
 	  }
@@ -84,18 +88,19 @@
 	    key: 'handleClick',
 	    value: function handleClick(time, day) {
 	      var key = '' + time + day;
+	      var newVal = {};
+
+	      newVal['' + key] = !this.state.times[key];
 
 	      this.setState({
-	        times: this.state.times.set(key, !this.state.times.get(key))
+	        times: Object.assign(this.state.times, newVal)
 	      });
-
-	      this.props.getDataFn(key);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var tableRows = [];
-	      var timeMap = this.state.times;
+	      var times = this.state.times;
 	      var getDataFn = this.props.getDataFn;
 
 	      for (var militaryHour = 0; militaryHour < 24; militaryHour++) {
@@ -114,19 +119,19 @@
 	            hour + 1,
 	            amPm
 	          ),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Su', className: timeMap.get(time + 'Su') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Su') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'M', className: timeMap.get(time + 'M') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'M') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'T', className: timeMap.get(time + 'T') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'T') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'W', className: timeMap.get(time + 'W') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'W') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Th', className: timeMap.get(time + 'Th') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Th') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'F', className: timeMap.get(time + 'F') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'F') }),
-	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Sa', className: timeMap.get(time + 'Sa') ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Sa') })
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Su', className: times[time + 'Su'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Su') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'M', className: times[time + 'M'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'M') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'T', className: times[time + 'T'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'T') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'W', className: times[time + 'W'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'W') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Th', className: times[time + 'Th'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Th') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'F', className: times[time + 'F'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'F') }),
+	          _react2.default.createElement('td', { key: 'slot' + militaryHour + 'Sa', className: times[time + 'Sa'] ? 'filled' : 'unfilled', onClick: this.handleClick.bind(this, '' + time, 'Sa') })
 	        ));
 	      }
 
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'wrapper' },
+	        { id: 'RAM-container', data: JSON.stringify(this.state.times) },
 	        _react2.default.createElement(
 	          'table',
 	          null,
@@ -187,11 +192,7 @@
 	  return RAM;
 	}(_react2.default.Component);
 
-	var getDataFn = function getDataFn(data) {
-	  console.log(data);
-	};
-
-	_reactDom2.default.render(_react2.default.createElement(RAM, { getDataFn: getDataFn.bind(undefined) }), document.getElementById('RAM-container'));
+	exports.default = RAM;
 
 /***/ },
 /* 1 */
@@ -20319,7 +20320,7 @@
 
 
 	// module
-	exports.push([module.id, "#RAM-container #wrapper {\n  display: flex;\n  justify-content: center;\n  margin-top: 100px; }\n  #RAM-container #wrapper table {\n    padding: 20px;\n    border: 1px solid black;\n    border-radius: 20px;\n    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);\n    background: lavender; }\n    #RAM-container #wrapper table tbody tr td:not(:first-child) {\n      text-align: center;\n      border: 1px solid black; }\n    #RAM-container #wrapper table tbody tr td:first-child {\n      text-align: end; }\n    #RAM-container #wrapper table tbody tr td {\n      width: 65px; }\n    #RAM-container #wrapper table tbody tr .filled {\n      background-color: #00bcd4; }\n", ""]);
+	exports.push([module.id, "#RAM-container {\n  display: flex;\n  justify-content: center;\n  margin-top: 100px; }\n  #RAM-container table {\n    padding: 20px;\n    border: 1px solid black;\n    border-radius: 20px;\n    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);\n    background: lavender; }\n    #RAM-container table tbody tr td:not(:first-child) {\n      text-align: center;\n      border: 1px solid black; }\n    #RAM-container table tbody tr td:first-child {\n      text-align: end; }\n    #RAM-container table tbody tr td {\n      width: 65px; }\n    #RAM-container table tbody tr .filled {\n      background-color: #00bcd4; }\n", ""]);
 
 	// exports
 
