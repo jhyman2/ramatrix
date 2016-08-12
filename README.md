@@ -13,9 +13,14 @@ npm install ramatrix --save
 ```
 import Ramatrix from 'ramatrix';
 
+componentDidMount () {
+  // programatically retrieving user input
+  let data = ReactDOM.findDOMNode(this.refs['myMatrix']).getAttribute('data');
+}
+
 render () {
   return (
-    <Ramatrix />
+    <Ramatrix ref="myMatrix" />
   );
 }
 ```
