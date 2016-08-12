@@ -50,15 +50,6 @@ localhost:8080
 
 Run `npm install` and `gulp build`. This will output the built JS into the `dist` directory.
 
-<h2>Technologies/Libraries</h2>
-
-* ES2015 (ES6)
-* Gulp
-* Node
-* React
-* SASS
-* Webpack
-
 <h2>Authors</h2>
 * [jhyman2](https://github.com/jhyman2)
 
