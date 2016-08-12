@@ -2,9 +2,22 @@
 
 > A react component to gather a user's hourly availability.
 
+![SSS1](https://github.com/jhyman2/ramatrix/blob/master/screenshot.png?raw=true)
+
 ## Install
 ```
 npm install ramatrix --save
+```
+
+## Usage within a React component
+```
+import Ramatrix from 'ramatrix';
+
+render () {
+  return (
+    <Ramatrix />
+  );
+}
 ```
 
 # Development
