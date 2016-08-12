@@ -17,9 +17,7 @@ componentDidMount () {
 }
 
 getMatrixData () {
-  console.log(this.myMatrix.getAttribute('data'));
-  // "{"11AMF":false,"1PMF":false,"4PMF":false,"10AMT":false,"2PMT":false,
-  "7AMTh":true,"8AMTh":true,"9AMTh":true,"6PMF":true,"7PMF":true,"8PMF":true}"
+  console.log(this.myMatrix.getAttribute('data')); // "{"7AMTh":true,"8AMTh":true,"9AMTh":true,"6PMF":true,"7PMF":true,"8PMF":true}"
 }
 
 render () {
