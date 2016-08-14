@@ -1,3 +1,5 @@
 .git
 .estlintrc
 dist/index.html
+example/
+screenshot.png
