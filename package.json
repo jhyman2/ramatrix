@@ -1,6 +1,6 @@
 {
   "name": "ramatrix",
-  "version": "0.0.147",
+  "version": "0.0.148",
   "description": "React availability matrix",
   "keywords": [
     "react-component",
@@ -9,10 +9,9 @@
     "matrix",
     "react-availability"
   ],
-  "main": "dist/js/index.js",
   "scripts": {
     "build": "gulp build",
-    "prepublish": "babel ./src --out-dir ./dist --source-maps --presets es2015,react --plugins babel-plugin-add-module-exports",
+    "prepublish": "babel src --out-dir ./dist --plugins 'transform-es2015-modules-umd, transform-assets'",
     "start": "webpack-dev-server --colors"
   },
   "babel": {
@@ -28,6 +27,8 @@
     "babel-core": "^6.9.0",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-css-modules": "0.0.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.12.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",

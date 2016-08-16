@@ -2,6 +2,8 @@ import React from 'react';
 
 require('!style!css!sass!./../sass/index.scss');
 
+const DAYS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
+
 export default class RAM extends React.Component {
 
   constructor () {
@@ -23,6 +25,22 @@ export default class RAM extends React.Component {
     });
   }
 
+  prepareRowData (militaryHour, time, times) {
+    const rowData = [];
+
+    for (let i = 0; i < DAYS.length; i++) {
+      rowData.push(
+        <td
+          key={`slot${militaryHour}${DAYS[i]}`}
+          className={times[`${time}${DAYS[i]}`] ? 'filled' : 'unfilled'}
+          onClick={this.handleClick.bind(this, `${time}`, DAYS[i])}
+        />
+      );
+    }
+
+    return rowData;
+  }
+
   render () {
     const tableRows = [];
     const times     = this.state.times;
@@ -36,15 +54,9 @@ export default class RAM extends React.Component {
       tableRows.push(
         <tr key={`row${militaryHour}`}>
           <td key={`time${militaryHour}`}>{hour ? hour : 12}-{hour+1}{amPm}</td>
-          <td key={`slot${militaryHour}Su`} className={times[`${time}Su`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Su')}></td>
-          <td key={`slot${militaryHour}M`} className={times[`${time}M`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'M')}></td>
-          <td key={`slot${militaryHour}T`} className={times[`${time}T`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'T')}></td>
-          <td key={`slot${militaryHour}W`} className={times[`${time}W`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'W')}></td>
-          <td key={`slot${militaryHour}Th`} className={times[`${time}Th`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Th')}></td>
-          <td key={`slot${militaryHour}F`} className={times[`${time}F`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'F')}></td>
-          <td key={`slot${militaryHour}Sa`} className={times[`${time}Sa`] ? 'filled' : 'unfilled'} onClick={this.handleClick.bind(this, `${time}`, 'Sa')}></td>
+          {this.prepareRowData(militaryHour, time, times)}
         </tr>
-      )
+      );
     }
 
     return (
