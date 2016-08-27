@@ -13,7 +13,7 @@ import Ramatrix from 'ramatrix';
 
 // call this function when you want to get the matrix data
 getMatrixData () {
-  console.log(this._myMatrix.getStringifiedData()); // "{"7AMTh":true,"8AMTh":true.....
+  console.log(this._myMatrix.getData()); // "{"7AMTh":true,"8AMTh":true.....
 }
 
 render () {

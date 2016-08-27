@@ -41,7 +41,7 @@ class RAM extends React.Component {
     return rowData;
   }
 
-  getStringifiedData () {
+  getData () {
     return JSON.stringify(this.state.times);
   }
 
