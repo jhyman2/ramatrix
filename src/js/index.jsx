@@ -14,7 +14,7 @@ class RAM extends React.Component {
     }
   }
 
-  handleClick (time, day) {
+  _handleClick (time, day) {
     let key    = `${time}${day}`;
     let newVal = {};
 
@@ -25,7 +25,7 @@ class RAM extends React.Component {
     });
   }
 
-  prepareRowData (militaryHour, time, times) {
+  _prepareRowData (militaryHour, time, times) {
     const rowData = [];
 
     for (let i = 0; i < DAYS.length; i++) {
@@ -33,7 +33,7 @@ class RAM extends React.Component {
         <td
           key={`slot${militaryHour}${DAYS[i]}`}
           className={times[`${time}${DAYS[i]}`] ? 'filled' : 'unfilled'}
-          onClick={this.handleClick.bind(this, `${time}`, DAYS[i])}
+          onClick={this._handleClick.bind(this, `${time}`, DAYS[i])}
         />
       );
     }
@@ -58,7 +58,7 @@ class RAM extends React.Component {
       tableRows.push(
         <tr key={`row${militaryHour}`}>
           <td key={`time${militaryHour}`}>{hour ? hour : 12}-{hour+1}{amPm}</td>
-          {this.prepareRowData(militaryHour, time, times)}
+          {this._prepareRowData(militaryHour, time, times)}
         </tr>
       );
     }
