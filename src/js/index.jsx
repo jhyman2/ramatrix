@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('!style!css!sass!./../sass/index.scss');
+const standardStyle = require('!style!css!sass!./../sass/index.scss');
 
 const DAYS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
 
@@ -47,6 +47,7 @@ class RAM extends React.Component {
   }
 
   render () {
+    const style            = this.props.style || standardStyle;
     const tableRows        = [];
     const { times }        = this.state;
     const { militaryTime } = this.state;
@@ -73,7 +74,7 @@ class RAM extends React.Component {
     }
 
     return (
-      <div id="RAM-container">
+      <div id="RAM-container" style={style}>
         <table>
           <thead>
             <tr>
