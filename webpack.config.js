@@ -38,6 +38,14 @@ module.exports = {
     libraryTarget: "umd",
     library: "[name]"
   },
+  externals: {
+    "react": {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    }
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Ramatrix',
@@ -45,20 +53,6 @@ module.exports = {
       filename: 'index.html'
     })
   ],
-  externals: {
-    "react": {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React"
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    }
-  },
   devServer: {
     contentBase: './dist'
   }

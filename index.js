@@ -1,1 +1,1 @@
-module.exports = require('./dist/js/index');
+module.exports = require('./dist/app.js');
