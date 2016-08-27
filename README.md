@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/jhyman2/ramatrix.png?label=ready&title=Ready)](https://waffle.io/jhyman2/ramatrix)
 # Ramatrix (React Availability Matrix)
 
 > A react component to gather a user's hourly availability.
