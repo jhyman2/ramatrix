@@ -41,6 +41,10 @@ class RAM extends React.Component {
     return rowData;
   }
 
+  getStringifiedData () {
+    return JSON.stringify(this.state.times);
+  }
+
   render () {
     const tableRows = [];
     const times     = this.state.times;
@@ -60,7 +64,7 @@ class RAM extends React.Component {
     }
 
     return (
-      <div id="RAM-container" data={JSON.stringify(this.state.times)}>
+      <div id="RAM-container">
         <table>
           <thead>
             <tr>
