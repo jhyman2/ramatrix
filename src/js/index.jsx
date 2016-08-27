@@ -1,10 +1,10 @@
 import React from 'react';
 
-require('!style!css!sass!./../sass/index.scss');
+// require('!style!css!sass!./../sass/index.scss');
 
 const DAYS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
 
-export default class RAM extends React.Component {
+class RAM extends React.Component {
 
   constructor () {
     super();
@@ -39,6 +39,10 @@ export default class RAM extends React.Component {
     }
 
     return rowData;
+  }
+
+  componentDidMount() {
+    console.log('deez nuts');
   }
 
   render () {
@@ -81,4 +85,6 @@ export default class RAM extends React.Component {
       </div>
     );
   }
-}
+};
+
+export default RAM;

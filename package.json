@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "gulp build",
+    "prebuild": "babel --plugins babel-plugin-add-module-exports src --out-dir ./dist --presets es2015,react",
     "prepublish": "babel src --out-dir ./dist --plugins 'transform-es2015-modules-umd, transform-assets'",
     "start": "webpack-dev-server --colors"
   },
@@ -19,8 +20,9 @@
       "es2015"
     ]
   },
+  "main": "dist/app.js",
   "dependencies": {
-    "react": "^15.0.2",
+    "react": "^15.3.1",
     "react-dom": "^15.0.2"
   },
   "devDependencies": {

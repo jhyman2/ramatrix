@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel',
         query: {
           presets: ['react', 'es2015', 'stage-0']
         }
@@ -34,7 +34,9 @@ module.exports = {
   },
   output: {
     path: __dirname + '/dist',
-    filename: 'bundle.js'
+    filename: '[name].js',
+    libraryTarget: "umd",
+    library: "[name]"
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -43,6 +45,20 @@ module.exports = {
       filename: 'index.html'
     })
   ],
+  externals: {
+    "react": {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM"
+    }
+  },
   devServer: {
     contentBase: './dist'
   }
