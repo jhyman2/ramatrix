@@ -1,4 +1,4 @@
-import React from 'react';
+import React    from 'react';
 import ReactDOM from 'react-dom';
 
 import RAM from '../src/js/index.jsx';
@@ -18,6 +18,5 @@ class TestComponent extends React.Component {
     );
   }
 }
-
 
 ReactDOM.render(<TestComponent />, document.getElementById('app-container'));

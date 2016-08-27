@@ -13,7 +13,6 @@ class RAM extends React.Component {
       times: {},
       militaryTime: this.props.militaryTime || false
     }
-
   }
 
   _handleClick (time, day) {
@@ -48,15 +47,12 @@ class RAM extends React.Component {
   }
 
   render () {
-
-
-    const tableRows = [];
-    const { times }     = this.state;
+    const tableRows        = [];
+    const { times }        = this.state;
     const { militaryTime } = this.state;
-    const { getDataFn } = this.props;
+    const { getDataFn }    = this.props;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
-
       let amPm = "";
       let hour = militaryHour;
       let time;
@@ -101,6 +97,3 @@ class RAM extends React.Component {
 };
 
 export default RAM;
-
-
-
