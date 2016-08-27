@@ -2,4 +2,5 @@
 .estlintrc
 dist/index.html
 example/
+dev/
 screenshot.png

@@ -10,8 +10,8 @@
     "react-availability"
   ],
   "scripts": {
-    "build": "webpack",
-    "prepublish": "webpack",
+    "build": "npm run prepublish",
+    "prepublish": "webpack --config webpack.pro.config.js",
     "dev": "webpack-dev-server --colors"
   },
   "babel": {
@@ -34,7 +34,9 @@
     "eslint-plugin-react": "^5.1.1",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.5.2",
+    "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.7.0",
+    "react-dom": "^15.3.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0"

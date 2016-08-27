@@ -1,9 +1,8 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path              = require('path');
+var path = require('path');
 
 module.exports = {
   entry: {
-    app: './dev/index.jsx'
+    app: './src/js/index.jsx'
   },
   progress: true,
   colors: true,
@@ -33,18 +32,19 @@ module.exports = {
     ],
     fallback: path.join(__dirname, 'node_modules')
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Ramatrix',
-      template: 'dev/index.html',
-      filename: 'index.html'
-    })
-  ],
   output: {
     path: __dirname + '/dist',
     filename: '[name].js',
     libraryTarget: "umd",
     library: "[name]"
+  },
+  externals: {
+    "react": {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    }
   },
   devServer: {
     contentBase: './dist'
