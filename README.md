@@ -53,3 +53,4 @@ Run `npm install` and `gulp build`. This will output the built JS into the `dist
 <h2>Links</h2>
 * [git repo](https://github.com/jhyman2/ramatrix)
 * [npm](https://www.npmjs.com/package/ramatrix)
+
