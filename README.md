@@ -11,18 +11,14 @@ npm install ramatrix --save
 ```
 import Ramatrix from 'ramatrix';
 
-componentDidMount () {
-  // reference to component
-  this.myMatrix = ReactDOM.findDOMNode(this.refs['myMatrix']);
-}
-
+// call this function when you want to get the matrix data
 getMatrixData () {
-  console.log(this.myMatrix.getAttribute('data')); // "{"7AMTh":true,"8AMTh":true.....
+  console.log(this._myMatrix.getStringifiedData()); // "{"7AMTh":true,"8AMTh":true.....
 }
 
 render () {
   return (
-    <Ramatrix ref="myMatrix" />
+    <Ramatrix ref={(c) => this._myMatrix = c}/>
   );
 }
 ```

@@ -1,5 +1,5 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path              = require('path');
+var path = require('path');
+
 module.exports = {
   entry: {
     app: './src/js/index.jsx'
@@ -46,13 +46,6 @@ module.exports = {
       root: "React"
     }
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Ramatrix',
-      template: 'src/index.html',
-      filename: 'index.html'
-    })
-  ],
   devServer: {
     contentBase: './dist'
   }
