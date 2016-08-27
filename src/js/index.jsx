@@ -6,12 +6,14 @@ const DAYS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
 
 class RAM extends React.Component {
 
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
 
     this.state = {
-      times: {}
+      times: {},
+      militaryTime: this.props.militaryTime || false
     }
+
   }
 
   _handleClick (time, day) {
@@ -46,14 +48,25 @@ class RAM extends React.Component {
   }
 
   render () {
+
+
     const tableRows = [];
-    const times     = this.state.times;
-    const getDataFn = this.props.getDataFn;
+    const { times }     = this.state;
+    const { militaryTime } = this.state;
+    const { getDataFn } = this.props;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
-      let amPm = militaryHour < 12 ? 'AM' : 'PM';
-      let hour = militaryHour % 12;
-      let time = `${hour}${amPm}`;
+
+      let amPm = "";
+      let hour = militaryHour;
+      let time;
+
+      if (!militaryTime) {
+        amPm = militaryHour < 12 ? 'AM' : 'PM';
+        hour = hour % 12;
+      }
+
+      time = `${hour}${amPm}`;
 
       tableRows.push(
         <tr key={`row${militaryHour}`}>

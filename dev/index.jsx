@@ -13,7 +13,7 @@ class TestComponent extends React.Component {
     return (
       <div>
         <button onClick={this.getData.bind(this)}>Get the data!</button>
-        <RAM ref={(c) => this._myMatrix = c} />
+        <RAM ref={(c) => this._myMatrix = c} militaryTime={true}/>
       </div>
     );
   }
