@@ -1,6 +1,6 @@
 import React from 'react';
 
-const standardStyle = require('!style!css!sass!./../sass/index.scss');
+require('!style!css!sass!./../sass/index.scss');
 
 const DAYS = ['Su', 'M', 'T', 'W', 'Th', 'F', 'Sa'];
 
