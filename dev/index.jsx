@@ -10,10 +10,23 @@ class TestComponent extends React.Component {
   }
 
   render () {
+    const background = {
+      border: '5px solid blue'
+    };
+
+    const cellWidth = {
+      width: '40px'
+    };
+
     return (
       <div>
         <button onClick={this.getData.bind(this)}>Get the data!</button>
-        <RAM ref={(c) => this._myMatrix = c} militaryTime={true}/>
+        <RAM
+          ref={(c) => this._myMatrix = c}
+          militaryTime={true}
+          containerStyle={background}
+          cellWidth={cellWidth}
+        />
       </div>
     );
   }
