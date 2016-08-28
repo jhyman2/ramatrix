@@ -23,6 +23,19 @@ render () {
   );
 }
 ```
+
+## Customizable options
+Props can be passed for data and styling customization
+
+`militaryTime - boolean (true/false) | default - false`
+ - Will display hours from 0 - 23 or 12AM - 12PM
+
+`containerStyle - reactStyling object | default - display: inline-block;`
+ - styling that will be applied to outer container
+
+`cellWidth - reactStyling object | default - 65px`
+ - width that will be applied to individual cells
+
 ![SSS1](https://github.com/jhyman2/ramatrix/blob/master/screenshot.png?raw=true)
 
 ## Contribute/Development

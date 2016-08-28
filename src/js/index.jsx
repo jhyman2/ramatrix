@@ -35,6 +35,7 @@ class RAM extends React.Component {
           key={`slot${militaryHour}${DAYS[i]}`}
           className={times[`${time}${DAYS[i]}`] ? 'filled' : 'unfilled'}
           onClick={this._handleClick.bind(this, `${time}`, DAYS[i])}
+          style={this.props.cellWidth}
         />
       );
     }
@@ -47,16 +48,15 @@ class RAM extends React.Component {
   }
 
   render () {
-    const style            = this.props.style || standardStyle;
     const tableRows        = [];
     const { times }        = this.state;
     const { militaryTime } = this.state;
     const { getDataFn }    = this.props;
 
     for (let militaryHour = 0; militaryHour < 24; militaryHour++) {
+      let time;
       let amPm = "";
       let hour = militaryHour;
-      let time;
 
       if (!militaryTime) {
         amPm = militaryHour < 12 ? 'AM' : 'PM';
@@ -74,7 +74,7 @@ class RAM extends React.Component {
     }
 
     return (
-      <div id="RAM-container" style={style}>
+      <div className="RAM-container" style={this.props.containerStyle}>
         <table>
           <thead>
             <tr>
