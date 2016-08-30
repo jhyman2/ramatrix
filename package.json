@@ -46,6 +46,16 @@
   "bugs": {
     "url": "https://github.com/jhyman2/ramatrix/issues"
   },
+  "contributors": [
+    {
+      "name": "Jamison Hyman",
+      "url": "https://github.com/jhyman2"
+    },
+    {
+      "name": "Kevin Coxe",
+      "url": "https://github.com/kevcoxe"
+    }
+  ],
   "author": "Jamison Hyman",
   "license": "MIT",
   "homepage": "https://github.com/jhyman2/ramatrix"
