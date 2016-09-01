@@ -74,9 +74,13 @@ class RAM extends React.Component {
     }
 
     return (
-      <div className="RAM-container" style={this.props.containerStyle}>
-        <table>
-          <thead>
+      <div
+        id={this.props.customID || 'RAM-container'}
+        className="RAM-container"
+        style={this.props.containerStyle}
+      >
+        <table className={this.props.tableClassName || 'RAM-table'}>
+          <thead className={this.props.tableHeadName || 'RAM-header'}>
             <tr>
               <th></th>
               <th>Sun</th>
@@ -88,7 +92,7 @@ class RAM extends React.Component {
               <th>Sat</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={this.props.tableBodyName || 'RAM-body'}>
             {tableRows}
           </tbody>
         </table>

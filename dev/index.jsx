@@ -26,6 +26,10 @@ class TestComponent extends React.Component {
           militaryTime={true}
           containerStyle={background}
           cellWidth={cellWidth}
+          customID="customID"
+          tableClassName="tableClassName"
+          tableHeadName="tableHeadName"
+          tableBodyName="tableBodyName"
         />
       </div>
     );
