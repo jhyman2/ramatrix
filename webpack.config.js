@@ -42,19 +42,13 @@ module.exports = {
       title: 'Ramatrix',
       template: 'dev/index.html',
       filename: 'index.html'
-    }),
-    new HtmlWebpackPlugin({
-      title: 'Ramatrix',
-      template: 'dev/index.html',
-      filename: '../index.html'
     })
   ],
   output: {
-    path: __dirname + '/dist',
+    path: __dirname,
     filename: '[name].js',
     libraryTarget: "umd",
     library: "[name]",
-    publicPath: 'dist/'
   },
   devServer: {
     contentBase: './dist'
