@@ -18,6 +18,10 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+      {
         test: /\.scss$/,
         loader: ['style', 'css', 'sass']
       }
@@ -38,13 +42,19 @@ module.exports = {
       title: 'Ramatrix',
       template: 'dev/index.html',
       filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Ramatrix',
+      template: 'dev/index.html',
+      filename: '../index.html'
     })
   ],
   output: {
     path: __dirname + '/dist',
     filename: '[name].js',
     libraryTarget: "umd",
-    library: "[name]"
+    library: "[name]",
+    publicPath: 'dist/'
   },
   devServer: {
     contentBase: './dist'
