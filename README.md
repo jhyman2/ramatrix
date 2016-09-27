@@ -36,6 +36,18 @@ Props can be passed for data and styling customization
 `cellWidth - reactStyling object | default - 65px`
  - width that will be applied to individual cells
 
+`customID - string | default - 'RAM-container'`
+ - id assigned to parent div of component
+
+`tableClassName - string | default - 'RAM-table'`
+ - className of the table element
+
+`tableHeadName - string | default - 'RAM-header'`
+ - className of the table head element
+
+`tableBodyName - string | default - 'RAM-body'`
+ - className of the table body element
+
 ![SSS1](https://github.com/jhyman2/ramatrix/blob/master/screenshot.png?raw=true)
 
 ## Contribute/Development
@@ -55,4 +67,3 @@ localhost:8080
 <h2>Links</h2>
 * [git repo](https://github.com/jhyman2/ramatrix)
 * [npm](https://www.npmjs.com/package/ramatrix)
-
