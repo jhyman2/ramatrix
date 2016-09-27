@@ -50,16 +50,6 @@ Props can be passed for data and styling customization
 
 ![SSS1](https://github.com/jhyman2/ramatrix/blob/master/screenshot.png?raw=true)
 
-## Contribute/Development
-<h3>Compiling for development</h3>
-
-Simply run `npm install` and `npm run dev` from the root of the project.  This will run webpack-dev-server on port 8080.
-
-<h3>Preview in a browser!</h3>
-```
-localhost:8080
-```
-
 <h2>Authors</h2>
 * [jhyman2](https://github.com/jhyman2)
 * [kevcoxe](https://github.com/kevcoxe)

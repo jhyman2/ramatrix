@@ -1,5 +1,6 @@
 .git
 .estlintrc
+CONTRIBUTING.md
 dist/index.html
 example/
 dev/
