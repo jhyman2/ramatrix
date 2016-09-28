@@ -24,6 +24,8 @@ render () {
 }
 ```
 
+[Try it out!](jhyman2.github.io/ramatrix)
+
 ## Customizable options
 Props can be passed for data and styling customization
 
