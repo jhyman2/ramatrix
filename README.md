@@ -1,5 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/jhyman2/ramatrix.png?label=ready&title=Ready)](https://waffle.io/jhyman2/ramatrix)
-[![npm](https://img.shields.io/npm/dt/ramatrix.svg?maxAge=2592000)](https://www.npmjs.com/package/ramatrix)
+[![Stories in Ready](https://badge.waffle.io/jhyman2/ramatrix.png?label=ready&title=Ready)](https://waffle.io/jhyman2/ramatrix) [![npm](https://img.shields.io/npm/dt/ramatrix.svg?maxAge=2592000)](https://www.npmjs.com/package/ramatrix)
 # Ramatrix (React Availability Matrix)
 
 > A react component to gather a user's hourly availability.
